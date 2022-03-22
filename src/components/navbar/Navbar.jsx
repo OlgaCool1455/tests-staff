@@ -1,7 +1,9 @@
 import React from 'react';
 import {Typography} from "antd";
 import {UserOutlined, ExperimentOutlined, ExportOutlined} from "@ant-design/icons";
+import {signOut} from "firebase/auth";
 
+import {auth} from "../../firebaseApi";
 import MyCard from "../common/MyCard";
 import NavbarLink from "./NavbarLink";
 
@@ -31,7 +33,7 @@ const Navbar = () => {
                     <div style={{display: "flex", alignItems: "center"}}>
                         <NavbarLink Icon={ExperimentOutlined} to={"/"}/>
                         <NavbarLink Icon={UserOutlined} to={"/profile"}/>
-                        <NavbarLink Icon={ExportOutlined} onClick={() => console.log('logout')}/>
+                        <NavbarLink Icon={ExportOutlined} onClick={() => signOut(auth)}/>
                     </div>
                 </div>
             </MyCard>

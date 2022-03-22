@@ -8,7 +8,7 @@ import {UserContext} from "../App";
 
 const Auth = () => {
     const navigate = useNavigate();
-    const user = useContext(UserContext);
+    const {user} = useContext(UserContext);
     const [activeTab, setActiveTab] = useState("sign_in");
 
     const tabList = [

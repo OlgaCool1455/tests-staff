@@ -17,6 +17,7 @@
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
     "react-timer-hook": "^3.0.5",
+    "use-async-effect": "^2.2.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

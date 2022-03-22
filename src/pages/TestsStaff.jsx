@@ -5,7 +5,7 @@ import {UserContext} from "../App";
 import TestPassing from "../components/testsPassing/TestPassing";
 
 const TestsStaff = () => {
-    const user = useContext(UserContext);
+    const {user} = useContext(UserContext);
     const navigate = useNavigate();
 
     useEffect(() => {

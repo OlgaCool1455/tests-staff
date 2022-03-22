@@ -1,20 +1,37 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Form} from "antd";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+
+import {emailRules, passwordRules, setLocalStorageAuthParams} from "./utils";
 import FormInput from "../common/FormInput";
 import MyButton from "../common/MyButton";
-import {Form} from "antd";
-import {emailRules, passwordRules} from "./utils";
+import {auth} from "../../firebaseApi";
+import {UserContext} from "../../App";
 
 const SignUp = () => {
-    const onFinish = (data) => {
-        console.log(data);
+    const {setUser} = useContext(UserContext);
+
+    const onRegister = async (data) => {
+        const user = await createUserWithEmailAndPassword(auth, data.email, data.password);
+        setUser(user);
+        setLocalStorageAuthParams(data.email, data.password);
+    }
+
+    const onRegisterFailed = () => {
+        console.log("failed");
     }
 
     return (
-        <Form onFinish={onFinish}>
+        <Form onFinish={onRegister} onFinishFailed={onRegisterFailed}>
             <FormInput
                 rules={emailRules}
                 name={'email'}
                 placeholder={"email"}
+            />
+            <FormInput
+                rules={[{required: true, text: "this field is required"}]}
+                name={'username'}
+                placeholder={"username"}
             />
             <FormInput
                 rules={passwordRules}
