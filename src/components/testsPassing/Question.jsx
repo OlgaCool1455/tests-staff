@@ -2,7 +2,7 @@ import React from 'react';
 import {Space, Typography} from "antd";
 import {QuestionCircleOutlined} from "@ant-design/icons";
 
-import RadioGroup from "../../common/RadioGroup";
+import RadioGroup from "../common/RadioGroup";
 
 const Question = ({question}) => {
     const solutionOptions = question.solutions.map(q => ({value: q.key, label: q.text}));

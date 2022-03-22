@@ -2,7 +2,7 @@ import React from 'react';
 import {Space} from "antd";
 import {LeftOutlined} from "@ant-design/icons";
 
-import MyButton from "../../common/MyButton";
+import MyButton from "../common/MyButton";
 
 const Actions = ({currentQuestion, next, prev, solutionsCount}) => {
     return (

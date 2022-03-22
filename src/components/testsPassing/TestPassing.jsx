@@ -5,9 +5,9 @@ import faker from "@faker-js/faker";
 
 import MyCard from "../common/MyCard";
 import TestSteps from "./TestSteps";
-import Question from "./testPassing/Question";
-import Actions from "./testPassing/Actions";
-import Stopwatch from "./testPassing/Stopwatch";
+import Question from "./Question";
+import Actions from "./Actions";
+import Stopwatch from "./Stopwatch";
 
 const TestPassing = ({testType}) => {
     const [questions, setQuestions] = useState([]);
