@@ -1,13 +1,24 @@
-import React from 'react';
-import {Typography} from "antd";
+import React, {useContext} from 'react';
+import {message, Typography} from "antd";
 import {UserOutlined, ExperimentOutlined, ExportOutlined} from "@ant-design/icons";
-import {signOut} from "firebase/auth";
 
-import {auth} from "../../firebaseApi";
+import {signOut} from "../../firebaseApi";
+import {UserContext} from "../../App";
 import MyCard from "../common/MyCard";
 import NavbarLink from "./NavbarLink";
 
 const Navbar = () => {
+    const {setUser} = useContext(UserContext);
+    const onSignOut = async () => {
+        const success = await signOut();
+
+        if (success) {
+            setUser(null);
+        } else  {
+            message.error("sign out failed");
+        }
+    }
+
     return (
         <div
             style={{
@@ -33,7 +44,7 @@ const Navbar = () => {
                     <div style={{display: "flex", alignItems: "center"}}>
                         <NavbarLink Icon={ExperimentOutlined} to={"/"}/>
                         <NavbarLink Icon={UserOutlined} to={"/profile"}/>
-                        <NavbarLink Icon={ExportOutlined} onClick={() => signOut(auth)}/>
+                        <NavbarLink Icon={ExportOutlined} onClick={onSignOut}/>
                     </div>
                 </div>
             </MyCard>

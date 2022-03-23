@@ -3,7 +3,7 @@ import {Card} from "antd";
 
 import {BORDER_RADIUS} from "../../styleConsts";
 
-const MyCard = ({children, width = 450, height, style, ...props}) => {
+const MyCard = ({children, width = 600, height, style, ...props}) => {
     return (
         <Card
             style={{

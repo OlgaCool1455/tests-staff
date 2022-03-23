@@ -1,6 +1,5 @@
 import React from 'react';
 import {Space, Typography} from "antd";
-import {QuestionCircleOutlined} from "@ant-design/icons";
 
 import RadioGroup from "../common/RadioGroup";
 

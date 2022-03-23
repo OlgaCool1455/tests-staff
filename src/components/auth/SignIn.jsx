@@ -1,21 +1,22 @@
 import React, {useContext} from 'react';
-import {Form} from "antd";
-import {signInWithEmailAndPassword} from "firebase/auth";
+import {Form, message} from "antd";
 
-import {auth} from "../../firebaseApi";
+import {signIn} from "../../firebaseApi";
 import {UserContext} from "../../App";
 import FormInput from "../common/FormInput";
 import MyButton from "../common/MyButton";
-import {setLocalStorageAuthParams} from "./utils";
 
 const SignIn = () => {
     const {setUser} = useContext(UserContext);
 
     const onLogin = async (data) => {
-        const user = await signInWithEmailAndPassword(auth, data.email, data.password);
-        console.log(user);
-        setUser(user);
-        setLocalStorageAuthParams(data.email, data.password);
+        const user = await signIn(data.email, data.password);
+
+        if (user) {
+            setUser(user);
+        } else {
+            message.error("sign in failed");
+        }
     }
 
     const onLoginFailed = () => {

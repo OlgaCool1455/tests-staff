@@ -12,6 +12,7 @@ import TestsStaff from "./pages/TestsStaff";
 import Auth from "./pages/Auth";
 import Navbar from "./components/navbar/Navbar";
 import Loader from "./components/common/Loader";
+import Profile from "./pages/Profile";
 
 export const UserContext = React.createContext(null);
 export const LoaderContext = React.createContext(null);
@@ -51,6 +52,7 @@ const App = () => {
                         <Routes>
                             <Route exact path={'/'} element={<TestsStaff/>}/>
                             <Route path={'auth'} element={<Auth/>}/>
+                            <Route path={'profile'} element={<Profile/>}/>
                         </Routes>
                     </div>
                 </UserContext.Provider>
