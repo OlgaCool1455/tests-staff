@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router';
 
 import {UserContext} from "../App";
 import TestPassing from "../components/testsPassing/TestPassing";
+import TestTypesList from "../components/testTypes/TestTypesList";
 
 const TestsStaff = () => {
     const {user} = useContext(UserContext);
@@ -17,7 +18,7 @@ const TestsStaff = () => {
 
     return (
         <div>
-            <TestPassing/>
+            <TestTypesList />
         </div>
     );
 };

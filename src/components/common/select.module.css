@@ -1,13 +1,4 @@
-body {
-    padding: 0;
-    margin: 0;
-}
-
-input {
-    background-color: #ececec !important;
-}
-
-.ant-select {
+.ant-select-selection {
     border-radius: 20px!important;
     background: #ececec!important;
     border: none;

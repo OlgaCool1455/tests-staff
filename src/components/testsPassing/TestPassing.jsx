@@ -9,8 +9,7 @@ import Question from "./Question";
 import Actions from "./Actions";
 import Stopwatch from "./Stopwatch";
 
-const TestPassing = ({testType}) => {
-    const [questions, setQuestions] = useState([]);
+const TestPassing = ({questions, testType}) => {
     useEffect(() => {
         const getSolution = () => ({
             key: faker.datatype.uuid(),
@@ -24,7 +23,7 @@ const TestPassing = ({testType}) => {
             type: faker.lorem.words(4),
         });
 
-        setQuestions(faker.helpers.uniqueArray(getQuestion, 10));
+        const res = faker.helpers.uniqueArray(getQuestion, 10);
     }, []);
 
     const carousel = useRef();
@@ -41,7 +40,7 @@ const TestPassing = ({testType}) => {
                     <Space style={{margin: "10px 0"}}>
                         <QuestionCircleOutlined/>
                         <Typography>
-                            Test type
+                            {testType ? testType.text : "Test type"}
                         </Typography>
                     </Space>
                     <Stopwatch/>

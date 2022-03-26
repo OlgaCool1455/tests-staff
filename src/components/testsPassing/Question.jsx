@@ -4,7 +4,7 @@ import {Space, Typography} from "antd";
 import RadioGroup from "../common/RadioGroup";
 
 const Question = ({question}) => {
-    const solutionOptions = question.solutions.map(q => ({value: q.key, label: q.text}));
+    const solutionOptions = question.solutions.map(q => ({value: q.id, label: q.text}));
 
     return (
         <Space direction={"vertical"}>

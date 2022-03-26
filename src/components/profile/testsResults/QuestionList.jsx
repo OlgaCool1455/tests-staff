@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TestType = () => {
+const QuestionList = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const TestType = () => {
     );
 };
 
-export default TestType;
+export default QuestionList;

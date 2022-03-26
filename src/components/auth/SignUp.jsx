@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Form, message} from "antd";
 
-import {signUp} from "../../firebaseApi";
+import {signUp} from "../../firebase/auth";
 import {UserContext} from "../../App";
 import {emailRules, passwordRules} from "./utils";
 import FormInput from "../common/FormInput";
